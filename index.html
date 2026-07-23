@@ -346,7 +346,7 @@
       <svg class="platform-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="7" y="4" width="10" height="17" rx="2"/><path d="M9 2l1 2M15 2l-1 2M9 19h6"/></svg>
       <span class="platform-name">Android</span>
       <span class="platform-status">Coming soon</span>
-      <a class="btn btn-ghost" href="https://github.com/bensciandgames/smart-cc-ai-site" target="_blank" rel="noopener">Watch releases</a>
+      <a id="android-download-btn" class="btn btn-ghost" href="https://github.com/bensciandgames/smart-cc-ai-site" target="_blank" rel="noopener">Watch releases</a>
     </div>
   </div>
 </section>
@@ -355,6 +355,38 @@
   <p>Smart CC AI — built for creators who'd rather be creating.</p>
   <p style="margin-top:0.6rem;"><a href="https://github.com/bensciandgames/smart-cc-ai-site" target="_blank" rel="noopener">GitHub</a></p>
 </footer>
+
+<script>
+  // Points the Android button at the latest release's .apk asset instead of
+  // a static link, so it doesn't go stale every time a new release ships.
+  // Leaves the button's existing markup (href/text) untouched on any
+  // failure — GitHub's API is unauthenticated here and rate-limited per
+  // IP, so silently falling back to "Watch releases" is the safe default.
+  (function () {
+    var btn = document.getElementById('android-download-btn');
+    if (!btn) return;
+
+    fetch('https://api.github.com/repos/bensciandgames/smart-cc-ai-site/releases')
+      .then(function (res) {
+        if (!res.ok) throw new Error('GitHub API returned ' + res.status);
+        return res.json();
+      })
+      .then(function (releases) {
+        var latest = releases[0]; // GitHub returns newest first, prerelease or not
+        var apkAsset = latest && latest.assets && latest.assets.find(function (asset) {
+          return asset.name.endsWith('.apk');
+        });
+        if (!apkAsset) throw new Error('No .apk asset found on latest release');
+        btn.href = apkAsset.browser_download_url;
+        btn.textContent = 'Download APK';
+        btn.removeAttribute('target');
+        btn.removeAttribute('rel');
+      })
+      .catch(function () {
+        // Static "Watch releases" link already in the markup — nothing to do.
+      });
+  })();
+</script>
 
 </body>
 </html>
