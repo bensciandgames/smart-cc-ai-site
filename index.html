@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart CC AI — Record and forget, everywhere</title>
+<meta name="description" content="Smart CC AI automates your video creation-to-publishing pipeline across Android, iOS, Windows, macOS, and Linux.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-void: #060814;
+    --bg-deep: #0b1130;
+    --bg-panel: #0d1638;
+    --ink-primary: #eafbff;
+    --ink-muted: #7fa3b8;
+    --ink-faint: #4a6478;
+    --accent-teal: #3ed6c9;
+    --accent-core: #9ff3e8;
+    --border-line: #1f3a4a;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg-void);
+    color: var(--ink-primary);
+    font-family: 'IBM Plex Sans', sans-serif;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+
+  a { color: inherit; }
+
+  :focus-visible {
+    outline: 2px solid var(--accent-teal);
+    outline-offset: 3px;
+  }
+
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent-teal);
+  }
+
+  /* ---------- Hero ---------- */
+
+  .hero {
+    position: relative;
+    min-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 6rem 1.5rem 4rem;
+    background: radial-gradient(ellipse at 50% 15%, #0f1a3a 0%, var(--bg-void) 62%);
+    overflow: hidden;
+  }
+
+  .hero-traces {
+    position: absolute;
+    inset: 0;
+    opacity: 0.35;
+    pointer-events: none;
+  }
+
+  .orb-wrap {
+    position: relative;
+    width: 148px;
+    height: 148px;
+    margin-bottom: 2.25rem;
+  }
+
+  .orb-ring {
+    position: absolute;
+    inset: 0;
+    animation: spin 14s linear infinite;
+  }
+
+  .orb-core {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 62px;
+    height: 62px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, var(--accent-core), #1fb8a8 75%);
+    box-shadow: 0 0 46px 10px rgba(62, 214, 201, 0.45);
+    animation: pulse 3.2s ease-in-out infinite;
+  }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @keyframes pulse {
+    0%, 100% { transform: translate(-50%, -50%) scale(0.94); }
+    50% { transform: translate(-50%, -50%) scale(1.04); }
+  }
+
+  h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    letter-spacing: -0.01em;
+    max-width: 18ch;
+    background: linear-gradient(180deg, var(--ink-primary) 0%, #b9d6dc 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .hero p.sub {
+    margin-top: 1.35rem;
+    max-width: 46ch;
+    color: var(--ink-muted);
+    font-size: 1.08rem;
+  }
+
+  .hero-ctas {
+    margin-top: 2.75rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .btn {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+    padding: 0.85rem 1.6rem;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .btn:hover { transform: translateY(-1px); }
+
+  .btn-primary {
+    background: var(--accent-teal);
+    color: #04211d;
+    font-weight: 500;
+  }
+  .btn-primary:hover { box-shadow: 0 0 24px rgba(62, 214, 201, 0.4); }
+
+  .btn-ghost {
+    border: 1px solid var(--border-line);
+    color: var(--ink-primary);
+  }
+  .btn-ghost:hover { border-color: var(--accent-teal); }
+
+  /* ---------- Platform trace section ---------- */
+
+  .platforms {
+    position: relative;
+    padding: 5rem 1.5rem 6rem;
+    max-width: 1040px;
+    margin: 0 auto;
+  }
+
+  .platforms .eyebrow { display: block; text-align: center; margin-bottom: 0.6rem; }
+
+  .platforms h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+
+  .trace-row {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+  }
+
+  /* The connecting trace — one pipeline reaching five destinations,
+     which is the literal product pitch, not decoration. */
+  .trace-line {
+    position: absolute;
+    top: 34px;
+    left: 6%;
+    right: 6%;
+    height: 1.5px;
+    background: linear-gradient(90deg, transparent, var(--border-line) 8%, var(--border-line) 92%, transparent);
+    z-index: 0;
+  }
+  .trace-pulse {
+    position: absolute;
+    top: -3px;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent-core);
+    box-shadow: 0 0 12px 3px rgba(62, 214, 201, 0.7);
+    animation: travel 5s linear infinite;
+  }
+  @keyframes travel {
+    0% { left: 0%; opacity: 0; }
+    8% { opacity: 1; }
+    92% { opacity: 1; }
+    100% { left: 100%; opacity: 0; }
+  }
+
+  .platform-card {
+    position: relative;
+    z-index: 1;
+    background: var(--bg-panel);
+    border: 1px solid var(--border-line);
+    border-radius: 12px;
+    padding: 1.6rem 1rem 1.4rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .platform-icon {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 0.9rem;
+    color: var(--accent-teal);
+  }
+
+  .platform-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .platform-status {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 1rem;
+  }
+
+  .platform-card .btn-ghost {
+    font-size: 0.72rem;
+    padding: 0.55rem 0.9rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  @media (max-width: 760px) {
+    .trace-row { grid-template-columns: repeat(2, 1fr); gap: 0.9rem; }
+    .trace-line, .trace-pulse { display: none; }
+  }
+
+  /* ---------- Footer ---------- */
+
+  footer {
+    border-top: 1px solid var(--border-line);
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    color: var(--ink-faint);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+  }
+  footer a { color: var(--ink-muted); text-decoration: underline; text-underline-offset: 3px; }
+  footer a:hover { color: var(--accent-teal); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .orb-ring, .orb-core, .trace-pulse { animation: none; }
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <svg class="hero-traces" width="100%" height="100%" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <path d="M60 120 L260 120 L260 240 L480 240" stroke="#1f3a4a" stroke-width="1" fill="none"/>
+    <path d="M1140 90 L940 90 L940 200 L760 200" stroke="#1f3a4a" stroke-width="1" fill="none"/>
+    <path d="M120 600 L340 600 L340 500 L560 500" stroke="#1f3a4a" stroke-width="1" fill="none"/>
+    <path d="M1080 560 L880 560 L880 460" stroke="#1f3a4a" stroke-width="1" fill="none"/>
+  </svg>
+
+  <div class="orb-wrap" aria-hidden="true">
+    <svg class="orb-ring" viewBox="0 0 148 148" width="148" height="148">
+      <g fill="none" stroke="#3ed6c9" stroke-width="2" opacity="0.85">
+        <circle cx="74" cy="74" r="70" stroke-dasharray="14 8"/>
+      </g>
+    </svg>
+    <div class="orb-core"></div>
+  </div>
+
+  <span class="eyebrow">Smart Content Creator AI</span>
+  <h1 style="margin-top: 0.9rem;">Record once. Publish everywhere. Automatically.</h1>
+  <p class="sub">Smart CC AI listens for your cue, edits to fit each platform, and posts on your behalf — from your phone or your desktop.</p>
+
+  <div class="hero-ctas">
+    <a class="btn btn-primary" href="#platforms">Get the app</a>
+    <a class="btn btn-ghost" href="https://github.com/" target="_blank" rel="noopener">View on GitHub</a>
+  </div>
+</section>
+
+<section class="platforms" id="platforms">
+  <span class="eyebrow">Choose your platform</span>
+  <h2>One pipeline. Every destination.</h2>
+
+  <div class="trace-row">
+    <div class="trace-line" aria-hidden="true"><div class="trace-pulse"></div></div>
+
+    <div class="platform-card">
+      <svg class="platform-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/></svg>
+      <span class="platform-name">Windows</span>
+      <span class="platform-status">Coming soon</span>
+      <a class="btn btn-ghost" href="https://github.com/" target="_blank" rel="noopener">Watch releases</a>
+    </div>
+
+    <div class="platform-card">
+      <svg class="platform-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M16.7 12.4c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.3 2.6 1.3-.1 1.8-.9 3.4-.9s2 .9 3.4.8c1.4 0 2.3-1.3 3.2-2.5.7-1 1.3-2.2 1.6-3.4-1.7-.7-2.2-2.4-2.2-2.5z"/><path d="M14.5 5.4c.6-.8 1-1.9.9-3-1 .1-2.1.7-2.8 1.5-.6.7-1.1 1.8-1 2.9 1.1.1 2.2-.6 2.9-1.4z"/></svg>
+      <span class="platform-name">macOS</span>
+      <span class="platform-status">Coming soon</span>
+      <a class="btn btn-ghost" href="https://github.com/" target="_blank" rel="noopener">Watch releases</a>
+    </div>
+
+    <div class="platform-card">
+      <svg class="platform-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2c1.5 2 2 3.5 2 5s-1 2.5-2 4c-1-1.5-2-2.5-2-4s.5-3 2-5z"/><path d="M6 15c1-1 3-1.5 6-1.5s5 .5 6 1.5c1 1-1 5-6 6.5-5-1.5-7-5.5-6-6.5z"/></svg>
+      <span class="platform-name">Linux</span>
+      <span class="platform-status">Coming soon</span>
+      <a class="btn btn-ghost" href="https://github.com/" target="_blank" rel="noopener">Watch releases</a>
+    </div>
+
+    <div class="platform-card">
+      <svg class="platform-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 19h2"/></svg>
+      <span class="platform-name">iOS</span>
+      <span class="platform-status">Coming soon</span>
+      <a class="btn btn-ghost" href="https://github.com/" target="_blank" rel="noopener">Watch releases</a>
+    </div>
+
+    <div class="platform-card">
+      <svg class="platform-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="7" y="4" width="10" height="17" rx="2"/><path d="M9 2l1 2M15 2l-1 2M9 19h6"/></svg>
+      <span class="platform-name">Android</span>
+      <span class="platform-status">Coming soon</span>
+      <a class="btn btn-ghost" href="https://github.com/" target="_blank" rel="noopener">Watch releases</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Smart CC AI — built for creators who'd rather be creating.</p>
+  <p style="margin-top:0.6rem;"><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a></p>
+</footer>
+
+</body>
+</html>
