@@ -157,6 +157,91 @@
   }
   .btn-ghost:hover { border-color: var(--accent-teal); }
 
+  /* ---------- Latest release ---------- */
+  /* Deliberately quieter than the hero — a reference spec sheet, not
+     another call-to-action, so no icons, no gradients, no animation. */
+
+  .releases {
+    padding: 3.5rem 1.5rem 4.5rem;
+    max-width: 1040px;
+    margin: 0 auto;
+  }
+
+  .releases .eyebrow { display: block; text-align: center; margin-bottom: 0.6rem; }
+
+  .releases h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: clamp(1.1rem, 2vw, 1.35rem);
+    text-align: center;
+    color: var(--ink-muted);
+    margin-bottom: 2.25rem;
+  }
+
+  .release-panel {
+    background: var(--bg-panel);
+    border: 1px solid var(--border-line);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .release-row {
+    display: grid;
+    grid-template-columns: 120px 130px 1fr;
+    gap: 1.25rem;
+    padding: 1.4rem 1.6rem;
+    border-bottom: 1px solid var(--border-line);
+  }
+  .release-row:last-child { border-bottom: none; }
+
+  .release-platform {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    padding-top: 0.15rem;
+  }
+
+  .release-version {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.82rem;
+    color: var(--accent-teal);
+  }
+
+  .release-version--empty { color: var(--ink-faint); }
+
+  .release-notes {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .release-notes li {
+    position: relative;
+    padding-left: 1rem;
+    color: var(--ink-muted);
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+  .release-notes li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: var(--accent-teal);
+  }
+
+  .release-empty {
+    color: var(--ink-faint);
+    font-size: 0.88rem;
+    font-style: italic;
+  }
+
+  @media (max-width: 640px) {
+    .release-row { grid-template-columns: 1fr; gap: 0.4rem; }
+    .release-version { margin-bottom: 0.2rem; }
+  }
+
   /* ---------- Platform trace section ---------- */
 
   .platforms {
@@ -304,6 +389,47 @@
   <div class="hero-ctas">
     <a class="btn btn-primary" href="#platforms">Get the app</a>
     <a class="btn btn-ghost" href="https://github.com/bensciandgames/smart-cc-ai-site" target="_blank" rel="noopener">View on GitHub</a>
+  </div>
+</section>
+
+<section class="releases" id="releases">
+  <span class="eyebrow">Latest release</span>
+  <h2>What's shipped, platform by platform</h2>
+
+  <div class="release-panel">
+    <div class="release-row">
+      <span class="release-platform">Windows</span>
+      <span class="release-version release-version--empty">—</span>
+      <p class="release-empty">No build yet</p>
+    </div>
+
+    <div class="release-row">
+      <span class="release-platform">macOS</span>
+      <span class="release-version release-version--empty">—</span>
+      <p class="release-empty">No build yet</p>
+    </div>
+
+    <div class="release-row">
+      <span class="release-platform">Linux</span>
+      <span class="release-version release-version--empty">—</span>
+      <p class="release-empty">No build yet</p>
+    </div>
+
+    <div class="release-row">
+      <span class="release-platform">iOS</span>
+      <span class="release-version release-version--empty">—</span>
+      <p class="release-empty">No build yet</p>
+    </div>
+
+    <div class="release-row">
+      <span class="release-platform">Android</span>
+      <span class="release-version">Alpha 0.0.1</span>
+      <ul class="release-notes">
+        <li>Core app, navigation, and manual recording work</li>
+        <li>Requires Android 8.0 or newer</li>
+        <li>Known limitation: automatic background upload isn't functional yet in this build (uploads only complete while the app stays open)</li>
+      </ul>
+    </div>
   </div>
 </section>
 
