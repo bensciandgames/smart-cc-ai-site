@@ -423,11 +423,13 @@
 
     <div class="release-row">
       <span class="release-platform">Android</span>
-      <span class="release-version">Alpha 0.0.3.0</span>
+      <span class="release-version">Alpha 0.0.4.0</span>
       <ul class="release-notes">
-        <li>Fix: v0.2.0's release build reused stale build/Gradle caches from before a WorkManager migration, causing an instant crash on launch (fixed in v0.2.1).</li>
-        <li>Fix: Isar's abandoned native library wasn't 16KB-page-aligned, crashing instantly on launch on newer 16KB-page devices (e.g. Galaxy S25 Ultra / Android 16). Migrated to the maintained isar_plus fork.</li>
-        <li>bump_version.sh now cleans before every release build, and versioning moved to a 4-segment W.X.Y.Z scheme (W reserved for the first full/stable release).</li>
+        <li>Bump version to 0.0.3.0 via scripts/bump_version.sh</li>
+        <li>Fix bump_version.sh's W encoding: pubspec.yaml needs valid semver</li>
+        <li>Extend bump_version.sh to a 4-segment W.X.Y.Z+N version</li>
+        <li>Migrate isar -> isar_plus to fix 16KB page-size crash on launch</li>
+        <li>Clean before every release build in bump_version.sh</li>
       </ul>
     </div>
   </div>
