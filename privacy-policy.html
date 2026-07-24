@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Fenix</title>
+<meta name="description" content="Fenix privacy policy: what data is collected, how it's used, and how to contact us.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-void: #060814;
+    --bg-panel: #0d1638;
+    --ink-primary: #eafbff;
+    --ink-muted: #7fa3b8;
+    --ink-faint: #4a6478;
+    --accent-teal: #3ed6c9;
+    --border-line: #1f3a4a;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg-void);
+    color: var(--ink-primary);
+    font-family: 'IBM Plex Sans', sans-serif;
+    line-height: 1.6;
+  }
+
+  a { color: var(--accent-teal); }
+
+  :focus-visible {
+    outline: 2px solid var(--accent-teal);
+    outline-offset: 3px;
+  }
+
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem 5rem;
+  }
+
+  .back {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.82rem;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 2.5rem;
+  }
+  .back:hover { text-decoration: underline; }
+
+  h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .updated {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--ink-faint);
+    margin-bottom: 3rem;
+  }
+
+  h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.3rem;
+    margin-top: 2.75rem;
+    margin-bottom: 0.85rem;
+    color: var(--ink-primary);
+  }
+
+  p, li {
+    color: var(--ink-muted);
+    font-size: 1rem;
+  }
+
+  p + p { margin-top: 0.9rem; }
+
+  ul { margin-top: 0.9rem; padding-left: 1.3rem; }
+  li + li { margin-top: 0.5rem; }
+
+  li strong { color: var(--ink-primary); }
+
+  .panel {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    border: 1px solid var(--border-line);
+    border-radius: 10px;
+    background: var(--bg-panel);
+  }
+</style>
+</head>
+<body>
+
+<main>
+  <a class="back" href="index.html">&larr; Fenix</a>
+
+  <h1>Privacy Policy</h1>
+  <p class="updated">Last updated: July 2026</p>
+
+  <p>
+    Fenix ("the app") is built around a simple rule: your footage stays
+    yours. This page explains what data the app collects, how it's used,
+    and who to contact with questions.
+  </p>
+
+  <h2>What we collect</h2>
+  <ul>
+    <li>
+      <strong>Account information.</strong> If you create an account,
+      basic account details (such as your email address) are handled
+      through Supabase Auth to identify you and secure your account.
+    </li>
+    <li>
+      <strong>Video and audio content.</strong> Recordings you capture
+      are processed <strong>on your device</strong> — audio is scanned
+      locally for spoken keywords to route and edit your clips. Raw
+      footage is not uploaded to our servers as part of this processing.
+    </li>
+    <li>
+      <strong>OAuth tokens for connected platforms.</strong> When you
+      connect an account (e.g. YouTube, TikTok, Instagram) so Fenix can
+      publish on your behalf, we store the access/refresh tokens that
+      platform issues. These tokens are used only to publish to the
+      accounts you explicitly connected.
+    </li>
+  </ul>
+
+  <h2>How your content is used</h2>
+  <p>
+    Video processing — keyword detection, editing, formatting — happens
+    locally on your device. A finished clip is only uploaded to a
+    platform if you've explicitly connected that platform's account and
+    the clip was routed to it. Nothing is posted anywhere without an
+    account connection you set up yourself.
+  </p>
+
+  <h2>What we don't do</h2>
+  <p>
+    We do not sell your data, your footage, or your account information
+    to anyone, for any reason.
+  </p>
+
+  <h2>Third-party platforms</h2>
+  <p>
+    When you connect YouTube, TikTok, Instagram, or any other platform,
+    that platform's own privacy policy also applies to what happens
+    with content once it's published there. Fenix's access to those
+    accounts is limited to the scopes needed to publish content on your
+    behalf.
+  </p>
+
+  <h2>Data retention</h2>
+  <p>
+    Connected-platform tokens and account information are kept for as
+    long as your account exists or until you disconnect a platform.
+    Locally processed video/audio content is stored on your device and
+    managed the same way any other file on your device is.
+  </p>
+
+  <h2>Changes to this policy</h2>
+  <p>
+    If this policy changes, the "Last updated" date above will change
+    too. Continued use of the app after an update means you accept the
+    revised policy.
+  </p>
+
+  <div class="panel">
+    <h2 style="margin-top:0;">Contact</h2>
+    <p>
+      Questions about this policy or your data? Reach out at
+      <a href="mailto:googledev@benscimediagroup.co">googledev@benscimediagroup.co</a>.
+    </p>
+  </div>
+</main>
+
+</body>
+</html>
