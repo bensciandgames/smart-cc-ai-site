@@ -423,10 +423,9 @@
 
     <div class="release-row">
       <span class="release-platform">Android</span>
-      <span class="release-version">Alpha 0.2.0</span>
+      <span class="release-version">Alpha 0.2.1</span>
       <ul class="release-notes">
-        <li>Bump version to 0.2.0+6 via scripts/bump_version.sh</li>
-        <li>Add publishing automation to bump_version.sh, safe by default</li>
+        <li>Fix: v0.2.0's release build reused stale build/Gradle caches from before the WorkManager 0.5.2->0.9.0+3 migration, causing an instant crash on launch. This build is from a fully clean state and bump_version.sh now cleans before every future release.</li>
       </ul>
     </div>
   </div>
