@@ -155,10 +155,14 @@
     font-size: clamp(4.5rem, 13vw, 9rem);
     letter-spacing: -0.01em;
     max-width: 18ch;
-    background: linear-gradient(180deg, var(--ink-primary) 0%, #b9d6dc 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    /* Was a background-clip:text gradient with color:transparent — looked
+       fine to the eye, but the actual text color was transparent, which
+       Google's OAuth verification homepage checker apparently doesn't
+       read as real visible app-name text (verification came back citing
+       "app name doesn't match your home page" despite "Fenix" being
+       right there). Plain solid color instead — small visual cost,
+       removes the ambiguity entirely. */
+    color: var(--ink-primary);
   }
 
   .hero .tagline {
@@ -224,6 +228,27 @@
   }
 
   .releases .eyebrow { display: block; text-align: center; margin-bottom: 0.6rem; }
+
+  .about {
+    padding: 2.5rem 1.5rem 1rem;
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .about h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+    color: var(--ink-primary);
+    margin-bottom: 1rem;
+  }
+
+  .about p {
+    color: var(--ink-muted);
+    font-size: 1.02rem;
+    line-height: 1.7;
+  }
 
   .releases h2 {
     font-family: 'Space Grotesk', sans-serif;
@@ -457,6 +482,19 @@
     <a class="btn btn-primary" href="#platforms">Get the app</a>
     <a class="btn btn-ghost" href="https://github.com/bensciandgames/smart-cc-ai-site" target="_blank" rel="noopener">View on GitHub</a>
   </div>
+</section>
+
+<section class="about" id="about">
+  <h2>What is Fenix?</h2>
+  <p>
+    Fenix is a video recording and auto-publishing app for Android, iOS,
+    Windows, macOS, and Linux. You record a video on your phone or
+    desktop, and Fenix listens for a spoken keyword to know which
+    platform and account it belongs to. It then automatically edits the
+    clip to fit that platform, and uploads it directly to the account
+    you've connected — YouTube, TikTok, or Instagram — with no manual
+    exporting or re-uploading required.
+  </p>
 </section>
 
 <section class="releases" id="releases">
