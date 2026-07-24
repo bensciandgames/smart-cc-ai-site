@@ -498,7 +498,14 @@
         return res.json();
       })
       .then(function (releases) {
-        var latest = releases[0]; // GitHub returns newest first, prerelease or not
+        // NOT releases[0] — found 2026-07-24 that GitHub's list order here
+        // doesn't reliably match publish time (a release created/published
+        // later still showed up after an older one). Picking the max
+        // published_at explicitly is correct regardless of API order.
+        var latest = releases.reduce(function (best, r) {
+          if (!best) return r;
+          return new Date(r.published_at) > new Date(best.published_at) ? r : best;
+        }, null);
         var apkAsset = latest && latest.assets && latest.assets.find(function (asset) {
           return asset.name.endsWith('.apk');
         });
