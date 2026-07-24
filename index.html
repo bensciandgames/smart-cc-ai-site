@@ -423,14 +423,10 @@
 
     <div class="release-row">
       <span class="release-platform">Android</span>
-      <span class="release-version">Alpha 0.1.1</span>
+      <span class="release-version">Alpha 0.2.0</span>
       <ul class="release-notes">
-        <li>Real on-device audio keyword scanning (whisper.cpp) — routes to the correct preset based on your spoken trigger phrase</li>
-        <li>Real grace-period countdown before upload, with a working cancel</li>
-        <li>Background upload restored — uploads complete even if the app isn't open</li>
-        <li>Bug fix: the grace-period cancel notification could crash or fail to register — fixed a notification-permission declaration gap and an isolate-routing bug in how the cancel tap was handled</li>
-        <li>Requires Android 8.0 or newer</li>
-        <li>Known gap (project-wide, not specific to this build): desktop screen recording remains non-functional</li>
+        <li>Bump version to 0.2.0+6 via scripts/bump_version.sh</li>
+        <li>Add publishing automation to bump_version.sh, safe by default</li>
       </ul>
     </div>
   </div>
