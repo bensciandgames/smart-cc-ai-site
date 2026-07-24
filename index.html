@@ -48,6 +48,53 @@
     color: var(--accent-teal);
   }
 
+  /* ---------- Top nav ---------- */
+
+  .topnav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.1rem 1.5rem;
+    background: rgba(6, 8, 20, 0.82);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-line);
+  }
+
+  .topnav-brand {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+  }
+
+  .topnav-links {
+    display: flex;
+    gap: 1.75rem;
+    list-style: none;
+  }
+
+  .topnav-links a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    color: var(--ink-muted);
+    transition: color 0.15s ease;
+  }
+
+  .topnav-links a:hover,
+  .topnav-links a[aria-current="page"] {
+    color: var(--accent-teal);
+  }
+
+  @media (max-width: 560px) {
+    .topnav-links { gap: 1.1rem; }
+  }
+
   /* ---------- Hero ---------- */
 
   .hero {
@@ -374,6 +421,17 @@
 </head>
 <body>
 
+<nav class="topnav">
+  <a class="topnav-brand" href="index.html">Fenix</a>
+  <ul class="topnav-links">
+    <li><a href="index.html" aria-current="page">Home</a></li>
+    <li><a href="#releases">Releases</a></li>
+    <li><a href="privacy-policy.html">Privacy</a></li>
+    <li><a href="terms-of-service.html">Terms</a></li>
+    <li><a href="https://github.com/bensciandgames/smart-cc-ai-site" target="_blank" rel="noopener">GitHub</a></li>
+  </ul>
+</nav>
+
 <section class="hero">
   <svg class="hero-traces" width="100%" height="100%" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
     <path d="M60 120 L260 120 L260 240 L480 240" stroke="#1f3a4a" stroke-width="1" fill="none"/>
@@ -499,6 +557,8 @@
     <a href="https://github.com/bensciandgames/smart-cc-ai-site" target="_blank" rel="noopener">GitHub</a>
     &nbsp;·&nbsp;
     <a href="privacy-policy.html">Privacy Policy</a>
+    &nbsp;·&nbsp;
+    <a href="terms-of-service.html">Terms of Service</a>
   </p>
 </footer>
 
