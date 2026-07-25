@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Returning to Fenix…</title>
+<style>
+  body {
+    background: #060814;
+    color: #eafbff;
+    font-family: -apple-system, 'IBM Plex Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    text-align: center;
+    padding: 1.5rem;
+  }
+  p { color: #7fa3b8; max-width: 32ch; line-height: 1.6; }
+</style>
+</head>
+<body>
+  <!--
+    This page is a fallback only. On a real device with the Fenix app
+    installed, Android's App Links (see /.well-known/assetlinks.json)
+    intercept this URL before the browser ever renders it, and hand
+    the OAuth callback straight to the app — flutter_web_auth_2 reads
+    the redirect from that intent, not from anything on this page.
+    This only actually renders if App Link verification hasn't
+    succeeded yet (e.g. right after install) or Fenix isn't installed.
+  -->
+  <p>If you're not redirected back to Fenix automatically, you can close this tab and return to the app.</p>
+</body>
+</html>

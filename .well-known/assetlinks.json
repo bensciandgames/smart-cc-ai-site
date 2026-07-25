@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "co.benscimediagroup.smartccai",
+      "sha256_cert_fingerprints": [
+        "77:DB:F8:DF:16:1F:97:12:95:06:E7:E5:36:BC:C7:BD:62:D2:2F:6D:7D:C0:CD:68:09:BE:3A:33:46:5F:29:58"
+      ]
+    }
+  }
+]
