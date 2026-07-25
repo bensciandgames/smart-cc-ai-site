@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fenix — Record and forget, everywhere</title>
 <meta name="description" content="Fenix automates your video creation-to-publishing pipeline across Android, iOS, Windows, macOS, and Linux.">
+<link rel="icon" type="image/png" href="assets/fenix-logo.png">
+<link rel="apple-touch-icon" href="assets/fenix-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -64,11 +66,20 @@
   }
 
   .topnav-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 700;
     font-size: 1.05rem;
     letter-spacing: 0.02em;
     text-decoration: none;
+  }
+
+  .topnav-brand img {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
   }
 
   .topnav-links {
@@ -447,7 +458,10 @@
 <body>
 
 <nav class="topnav">
-  <a class="topnav-brand" href="index.html">Fenix</a>
+  <a class="topnav-brand" href="index.html">
+    <img src="assets/fenix-logo.png" alt="Fenix logo" width="28" height="28">
+    Fenix
+  </a>
   <ul class="topnav-links">
     <li><a href="index.html" aria-current="page">Home</a></li>
     <li><a href="#releases">Releases</a></li>
