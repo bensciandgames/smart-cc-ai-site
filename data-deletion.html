@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Deletion — Fenix</title>
+<meta name="description" content="How to request deletion of your Fenix account and associated data.">
+<link rel="icon" type="image/png" href="assets/fenix-logo.png">
+<link rel="apple-touch-icon" href="assets/fenix-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-void: #060814;
+    --bg-panel: #0d1638;
+    --ink-primary: #eafbff;
+    --ink-muted: #7fa3b8;
+    --ink-faint: #4a6478;
+    --accent-teal: #3ed6c9;
+    --border-line: #1f3a4a;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg-void);
+    color: var(--ink-primary);
+    font-family: 'IBM Plex Sans', sans-serif;
+    line-height: 1.6;
+  }
+
+  a { color: var(--accent-teal); }
+
+  :focus-visible {
+    outline: 2px solid var(--accent-teal);
+    outline-offset: 3px;
+  }
+
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem 5rem;
+  }
+
+  .back {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.82rem;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 2.5rem;
+  }
+  .back:hover { text-decoration: underline; }
+
+  h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .updated {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--ink-faint);
+    margin-bottom: 3rem;
+  }
+
+  h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.3rem;
+    margin-top: 2.75rem;
+    margin-bottom: 0.85rem;
+    color: var(--ink-primary);
+  }
+
+  p, li {
+    color: var(--ink-muted);
+    font-size: 1rem;
+  }
+
+  p + p { margin-top: 0.9rem; }
+
+  ul { margin-top: 0.9rem; padding-left: 1.3rem; }
+  li + li { margin-top: 0.5rem; }
+
+  li strong { color: var(--ink-primary); }
+
+  .panel {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    border: 1px solid var(--border-line);
+    border-radius: 10px;
+    background: var(--bg-panel);
+  }
+
+  .cross-links {
+    margin-top: 2.5rem;
+    font-size: 0.92rem;
+  }
+</style>
+</head>
+<body>
+
+<main>
+  <a class="back" href="index.html">&larr; Fenix</a>
+
+  <h1>Data Deletion</h1>
+  <p class="updated">Last updated: July 2026</p>
+
+  <p>
+    You can request deletion of your Fenix account and the data
+    associated with it at any time. This page explains how, and what
+    gets removed.
+  </p>
+
+  <h2>How to request deletion</h2>
+  <p>
+    Email <a href="mailto:googledev@benscimediagroup.co">googledev@benscimediagroup.co</a>
+    from the same address you use for your Fenix account, and let us
+    know you'd like your account and data deleted. We may reply to
+    confirm the request before proceeding.
+  </p>
+
+  <h2>What gets deleted</h2>
+  <ul>
+    <li><strong>Account records</strong> — your email address and any account/entitlement information we hold.</li>
+    <li><strong>Connected-platform tokens</strong> — stored OAuth access to any YouTube, TikTok, or Instagram account you connected.</li>
+    <li><strong>Associated data</strong> — any other data tied to your account on our systems.</li>
+  </ul>
+  <p>
+    Video and audio content itself is processed and stored on your own
+    device, not on our servers — see the
+    <a href="privacy-policy.html">Privacy Policy</a> for details. Deleting
+    your account doesn't reach into your device; uninstalling the app or
+    deleting local files does that.
+  </p>
+
+  <h2>Timeframe</h2>
+  <p>
+    We aim to complete deletion requests within a reasonable timeframe,
+    typically within 30 days of confirming the request.
+  </p>
+
+  <h2>Disconnecting a single platform instead</h2>
+  <p>
+    If you only want to revoke Fenix's access to one connected platform
+    (YouTube, TikTok, or Instagram) rather than delete your whole
+    account, you can do that directly from that platform's own account
+    settings (e.g. Google Account's "Third-party apps & services"), or
+    email us the same way and we'll remove that connection's stored
+    token on our end.
+  </p>
+
+  <div class="panel">
+    <h2 style="margin-top:0;">Contact</h2>
+    <p>
+      Questions about data deletion? Reach out at
+      <a href="mailto:googledev@benscimediagroup.co">googledev@benscimediagroup.co</a>.
+    </p>
+  </div>
+
+  <p class="cross-links">
+    See also: <a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp;
+    <a href="terms-of-service.html">Terms of Service</a>
+  </p>
+</main>
+
+</body>
+</html>
