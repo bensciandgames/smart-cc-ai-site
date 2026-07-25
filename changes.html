@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Changelog — Fenix</title>
+<meta name="description" content="Full Fenix release history, platform by platform.">
+<link rel="icon" type="image/png" href="assets/fenix-logo.png">
+<link rel="apple-touch-icon" href="assets/fenix-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-void: #060814;
+    --bg-panel: #0d1638;
+    --ink-primary: #eafbff;
+    --ink-muted: #7fa3b8;
+    --ink-faint: #4a6478;
+    --accent-teal: #3ed6c9;
+    --border-line: #1f3a4a;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg-void);
+    color: var(--ink-primary);
+    font-family: 'IBM Plex Sans', sans-serif;
+    line-height: 1.6;
+  }
+
+  a { color: var(--accent-teal); }
+
+  :focus-visible {
+    outline: 2px solid var(--accent-teal);
+    outline-offset: 3px;
+  }
+
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem 5rem;
+  }
+
+  .back {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.82rem;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 2.5rem;
+  }
+  .back:hover { text-decoration: underline; }
+
+  h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .sub {
+    color: var(--ink-muted);
+    font-size: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .platform-section { margin-top: 3.25rem; }
+  .platform-section:first-of-type { margin-top: 0; }
+
+  .platform-heading {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.3rem;
+    color: var(--ink-primary);
+    margin-bottom: 1rem;
+  }
+
+  .changelog-panel {
+    background: var(--bg-panel);
+    border: 1px solid var(--border-line);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .changelog-entry {
+    padding: 1.4rem 1.6rem;
+    border-bottom: 1px solid var(--border-line);
+  }
+  .changelog-entry:last-child { border-bottom: none; }
+
+  .changelog-entry-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .changelog-version {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.88rem;
+    color: var(--accent-teal);
+  }
+
+  .changelog-date {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.74rem;
+    color: var(--ink-faint);
+    white-space: nowrap;
+  }
+
+  .changelog-flag {
+    display: inline-block;
+    margin-left: 0.6rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 4px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    background: rgba(255, 107, 107, 0.15);
+    color: #ff8f8f;
+  }
+
+  .changelog-notes {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .changelog-notes li {
+    position: relative;
+    padding-left: 1rem;
+    color: var(--ink-muted);
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+  .changelog-notes li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: var(--accent-teal);
+  }
+
+  .changelog-empty {
+    color: var(--ink-faint);
+    font-size: 0.88rem;
+    font-style: italic;
+    padding: 1.4rem 1.6rem;
+  }
+
+  @media (max-width: 560px) {
+    .changelog-entry-header { flex-direction: column; gap: 0.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<main>
+  <a class="back" href="index.html">&larr; Fenix</a>
+
+  <h1>Changelog</h1>
+  <p class="sub">
+    Full release history, platform by platform, newest first. The
+    <a href="index.html#releases">homepage</a> only shows each
+    platform's current release — this page keeps the permanent record.
+  </p>
+
+  <section class="platform-section">
+    <h2 class="platform-heading">Android</h2>
+    <div class="changelog-panel">
+      <div class="changelog-entry">
+        <div class="changelog-entry-header">
+          <span class="changelog-version">Alpha 0.0.10.0</span>
+          <span class="changelog-date">2026-07-25</span>
+        </div>
+        <ul class="changelog-notes">
+          <li>Add copyright/version/WIP footer badge to splash, home, and settings</li>
+          <li>Generate real app icon from the new phoenix logo</li>
+          <li>Build the missing Instagram ig-user-id resolution step</li>
+          <li>Fix TikTok/Instagram OAuth redirect capture; add alpha unlock flag</li>
+        </ul>
+      </div>
+
+      <div class="changelog-entry">
+        <div class="changelog-entry-header">
+          <span class="changelog-version">Alpha 0.0.9.0</span>
+          <span class="changelog-date">2026-07-25</span>
+        </div>
+        <ul class="changelog-notes">
+          <li>Add settings screen with Night/Day/Custom theme selection</li>
+          <li>Extend splash screen's visual identity into the rest of the app</li>
+        </ul>
+      </div>
+
+      <div class="changelog-entry">
+        <div class="changelog-entry-header">
+          <span class="changelog-version">Alpha 0.0.8.0</span>
+          <span class="changelog-date">2026-07-25</span>
+        </div>
+        <ul class="changelog-notes">
+          <li>Migrate YouTube OAuth to google_sign_in AuthorizationClient; add release signing</li>
+          <li>Add video playback screen; fix two real FFmpeg pipeline bugs</li>
+        </ul>
+      </div>
+
+      <div class="changelog-entry">
+        <div class="changelog-entry-header">
+          <span class="changelog-version">Alpha 0.0.7.0</span>
+          <span class="changelog-date">2026-07-24</span>
+        </div>
+        <ul class="changelog-notes">
+          <li>Rename Smart CC AI -&gt; Fenix</li>
+          <li>Real camera capture, WorkManager/R8 proguard fix, minification wiring</li>
+        </ul>
+      </div>
+
+      <div class="changelog-entry">
+        <div class="changelog-entry-header">
+          <span class="changelog-version">Alpha 0.0.6.0</span>
+          <span class="changelog-date">2026-07-24</span>
+        </div>
+        <p class="changelog-empty" style="padding:0;">Housekeeping bump — no functional changes.</p>
+      </div>
+
+      <div class="changelog-entry">
+        <div class="changelog-entry-header">
+          <span class="changelog-version">Alpha 0.0.5.0</span>
+          <span class="changelog-date">2026-07-24</span>
+        </div>
+        <p class="changelog-empty" style="padding:0;">Housekeeping bump — no functional changes.</p>
+      </div>
+
+      <div class="changelog-entry">
+        <div class="changelog-entry-header">
+          <span class="changelog-version">Alpha 0.0.4.0</span>
+          <span class="changelog-date">2026-07-24</span>
+        </div>
+        <p class="changelog-empty" style="padding:0;">Housekeeping bump — no functional changes.</p>
+      </div>
+
+      <div class="changelog-entry">
+        <div class="changelog-entry-header">
+          <span class="changelog-version">Alpha 0.0.3.0</span>
+          <span class="changelog-date">2026-07-23</span>
+        </div>
+        <ul class="changelog-notes">
+          <li>Fix bump_version.sh's W encoding: pubspec.yaml needs valid semver</li>
+          <li>Extend bump_version.sh to a 4-segment W.X.Y.Z+N version</li>
+          <li>Migrate isar -&gt; isar_plus to fix 16KB page-size crash on launch</li>
+          <li>Clean before every release build in bump_version.sh</li>
+        </ul>
+      </div>
+
+      <div class="changelog-entry">
+        <div class="changelog-entry-header">
+          <span class="changelog-version">
+            Alpha 0.2.1
+            <span class="changelog-flag">Fix</span>
+          </span>
+          <span class="changelog-date">2026-07-23</span>
+        </div>
+        <ul class="changelog-notes">
+          <li>Fix: v0.2.0's release build reused stale build/Gradle caches from before the WorkManager migration, causing an instant crash on launch. Built from a fully clean state; bump_version.sh now cleans before every release.</li>
+        </ul>
+      </div>
+
+      <div class="changelog-entry">
+        <div class="changelog-entry-header">
+          <span class="changelog-version">
+            Alpha 0.2.0
+            <span class="changelog-flag">Broken</span>
+          </span>
+          <span class="changelog-date">2026-07-23</span>
+        </div>
+        <ul class="changelog-notes">
+          <li>Crashes instantly on launch (stale build cache) — superseded immediately by 0.2.1. Kept here for the record only.</li>
+        </ul>
+      </div>
+
+      <div class="changelog-entry">
+        <div class="changelog-entry-header">
+          <span class="changelog-version">Alpha 0.1.1</span>
+          <span class="changelog-date">2026-07-23</span>
+        </div>
+        <ul class="changelog-notes">
+          <li>Explicitly declare the POST_NOTIFICATIONS permission in the app's own manifest</li>
+          <li>Fix the grace-period Cancel notification action routing through an unregistered background isolate</li>
+        </ul>
+      </div>
+
+      <div class="changelog-entry">
+        <div class="changelog-entry-header">
+          <span class="changelog-version">Alpha 0.1.0</span>
+          <span class="changelog-date">2026-07-23</span>
+        </div>
+        <ul class="changelog-notes">
+          <li>Real on-device audio keyword scanning (whisper.cpp), routing to the correct preset based on the spoken trigger phrase</li>
+          <li>Real grace-period countdown before upload, with a working Cancel action</li>
+          <li>Background upload restored on a current, compatible WorkManager version</li>
+        </ul>
+      </div>
+
+      <div class="changelog-entry">
+        <div class="changelog-entry-header">
+          <span class="changelog-version">Alpha 0.0.1</span>
+          <span class="changelog-date">2026-07-23</span>
+        </div>
+        <ul class="changelog-notes">
+          <li>First alpha build. Capture pipeline, presets, OAuth, entitlements, local persistence, and the ffmpeg edit engine all working.</li>
+          <li>Known gaps at this point: desktop screen recording and Android background upload were both stubbed out.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="platform-section">
+    <h2 class="platform-heading">Windows</h2>
+    <div class="changelog-panel">
+      <p class="changelog-empty">No releases yet.</p>
+    </div>
+  </section>
+
+  <section class="platform-section">
+    <h2 class="platform-heading">macOS</h2>
+    <div class="changelog-panel">
+      <p class="changelog-empty">No releases yet.</p>
+    </div>
+  </section>
+
+  <section class="platform-section">
+    <h2 class="platform-heading">Linux</h2>
+    <div class="changelog-panel">
+      <p class="changelog-empty">No releases yet.</p>
+    </div>
+  </section>
+
+  <section class="platform-section">
+    <h2 class="platform-heading">iOS</h2>
+    <div class="changelog-panel">
+      <p class="changelog-empty">No releases yet.</p>
+    </div>
+  </section>
+</main>
+
+</body>
+</html>
